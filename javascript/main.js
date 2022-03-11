@@ -1,15 +1,17 @@
+let ComputerWins = 0;
+let PlayerWins = 0;
+
 // Get computer Selection 
 function computerPlay() {
     const computerChoice = ["Rock", "Paper", "Scissors"];
     return computerChoice[Math.floor(Math.random() * computerChoice.length)];
 }
 
-let ComputerWins = 0;
-let PlayerWins = 0;
-
-
-// this function call 5 time the round and choose the winner based on total score
+// Call 5 time the round and choose the winner based on total score
 function PlayGame() {
+    ComputerWins = 0;
+    PlayerWins = 0;
+    
     for(let i=0; i<5; i++){
         const result = PlayRound();
         console.log(result);
@@ -28,7 +30,7 @@ function PlayGame() {
 }
 
 
-// funciton to compare value and choose winner
+// Compare value and choose winner
 function PlayRound() {
     const computerSelection = computerPlay();
     const playerSelection = prompt("Coose Rock, Paper or Scissors!")
