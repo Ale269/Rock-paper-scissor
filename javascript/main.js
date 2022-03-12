@@ -1,9 +1,13 @@
 let ComputerWins = 0;
 let PlayerWins = 0;
+let RoundPlayed = 0;
 let playerSelection = "";
 let displayPlayerWins = document.getElementById("player-win-counter");
 let displayComputerWIns = document.getElementById("computer-win-counter");
 let displayResult = document.getElementById("game-round-result");
+let displayRoundCount = document.getElementById("round-counter");
+displayComputerWIns.textContent = ComputerWins;
+displayPlayerWins.textContent = PlayerWins;
 
 // start the game with proper player value
 document.querySelectorAll(".start-the-game").forEach((element) => {
@@ -26,6 +30,8 @@ function computerPlay() {
 function PlayRound(element) {
     const computerSelection = computerPlay();
     playerSelection = element;
+    RoundPlayed++;
+    displayRoundCount.textContent = "Round: " + RoundPlayed;
 
     switch(playerSelection){
         case "Rock":

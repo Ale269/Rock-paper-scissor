@@ -4,23 +4,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="style/style.css">
+
+    <title>Rock, Paper and Scissors game Project</title>
 </head>
 <body>
-    <input type="button" value="Rock" class="start-the-game" placeholder="Rock">
-    <input type="button" value="Paper" class="start-the-game" placeholder="Paper">
-    <input type="button" value="Scissors" class="start-the-game" placeholder="Scissors">
-
     <div class="result">
-        <div>
-            <h3 id="player-win-counter"></h3>
+        <div class="scores-container">
+            <div>
+                <h3 id="player-win-counter"></h3>
+            </div>
+            <div>
+                <h3 id="computer-win-counter"></h3>
+            </div>
         </div>
-        <div>
-            <h3 id="computer-win-counter"></h3>
-        </div>
-        <div>
+        <div class="result-container">
             <h2 id="game-round-result"></h2>
+            <h4 id="round-counter"></h4>
         </div>
+    </div>
+
+    <div class="input-container">
+        <input type="button" value="Rock" class="start-the-game" placeholder="Rock">
+        <input type="button" value="Paper" class="start-the-game" placeholder="Paper">
+        <input type="button" value="Scissors" class="start-the-game" placeholder="Scissors">
     </div>
 
     <script src="javascript/main.js"></script> 
