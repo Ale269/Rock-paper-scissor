@@ -1,38 +1,24 @@
 let ComputerWins = 0;
 let PlayerWins = 0;
 let playerSelection = "";
+let displayPlayerWins = document.getElementById("player-win-counter");
+let displayComputerWIns = document.getElementById("computer-win-counter");
+let displayResult = document.getElementById("game-round-result");
 
 // start the game with proper player value
 document.querySelectorAll(".start-the-game").forEach((element) => {
-    element.addEventListener("click", () => {PlayRound(element.value)});
+    element.addEventListener("click", () => {
+        if(ComputerWins < 5 && PlayerWins < 5){
+            PlayRound(element.value)
+        }
+    });
 })
+
 
 // Get computer Selection 
 function computerPlay() {
     const computerChoice = ["Rock", "Paper", "Scissors"];
     return computerChoice[Math.floor(Math.random() * computerChoice.length)];
-}
-
-// Call 5 time the round and choose the winner based on total score
-function PlayGame() {
-    ComputerWins = 0;
-    PlayerWins = 0;
-    
-    for(let i=0; i<5; i++){
-        const result = PlayRound();
-        console.log(result);
-    }
-
-    if(ComputerWins > PlayerWins){
-        console.log("Computer Win the game!")
-        return 
-    }else if(PlayerWins > ComputerWins){
-        console.log("Player Win the game!")
-        return 
-    }else {
-        console.log("Nobody win the game")
-        return
-    }
 }
 
 
@@ -44,38 +30,63 @@ function PlayRound(element) {
     switch(playerSelection){
         case "Rock":
             if(computerSelection === "Rock"){
-                return "you choosed: " + playerSelection + ", the computer choosed: " + computerSelection + ". Nobody win";
+                displayResult.textContent = "you choosed: " + playerSelection + ", the computer choosed: " + computerSelection + ". Nobody win";
+                break
             }else if(computerSelection === "Paper"){
                 ComputerWins++;
-                return "you choosed: " + playerSelection + ", the computer choosed: " + computerSelection + ". The computer Win!";
+                displayResult.textContent = "you choosed: " + playerSelection + ", the computer choosed: " + computerSelection + ". The computer Win!";
+                displayComputerWIns.textContent = ComputerWins;
+                displayPlayerWins.textContent = PlayerWins;
+                break
             }else {
                 PlayerWins++;
-                return "you choosed: " + playerSelection + ", the computer choosed: " + computerSelection + ". You Win!";
+                displayResult.textContent = "you choosed: " + playerSelection + ", the computer choosed: " + computerSelection + ". You Win!";
+                displayComputerWIns.textContent = ComputerWins;
+                displayPlayerWins.textContent = PlayerWins;
+                break
             }
 
 
         case "Paper":
             if(computerSelection === "Paper"){
-                return "you choosed: " + playerSelection + ", the computer choosed: " + computerSelection + ". Nobody win";
+                displayResult.textContent = "you choosed: " + playerSelection + ", the computer choosed: " + computerSelection + ". Nobody win";
+                break
             }else if(computerSelection === "Scissors"){
                 ComputerWins++;
-                return "you choosed: " + playerSelection + ", the computer choosed: " + computerSelection + ". The computer Win!";
+                displayResult.textContent = "you choosed: " + playerSelection + ", the computer choosed: " + computerSelection + ". The computer Win!";
+                displayComputerWIns.textContent = ComputerWins;
+                displayPlayerWins.textContent = PlayerWins;
+                break
             }else {
                 PlayerWins++;
-                return "you choosed: " + playerSelection + ", the computer choosed: " + computerSelection + ". You Win!";
+                displayResult.textContent = "you choosed: " + playerSelection + ", the computer choosed: " + computerSelection + ". You Win!";
+                displayComputerWIns.textContent = ComputerWins;
+                displayPlayerWins.textContent = PlayerWins;
+                break
             }
 
 
         case "Scissors": 
             if(computerSelection === "Scissors"){
-                return "you choosed: " + playerSelection + ", the computer choosed: " + computerSelection + ". Nobody win";
+                displayResult.textContent = "you choosed: " + playerSelection + ", the computer choosed: " + computerSelection + ". Nobody win";
+                break
             }else if(computerSelection === "Rock"){
                 ComputerWins++;
-                return "you choosed: " + playerSelection + ", the computer choosed: " + computerSelection + ". The computer Win!";
+                displayResult.textContent = "you choosed: " + playerSelection + ", the computer choosed: " + computerSelection + ". The computer Win!";
+                displayComputerWIns.textContent = ComputerWins;
+                displayPlayerWins.textContent = PlayerWins;
+                break
             }else {
                 PlayerWins++;
-                return "you choosed: " + playerSelection + ", the computer choosed: " + computerSelection + ". You Win!";
+                displayResult.textContent = "you choosed: " + playerSelection + ", the computer choosed: " + computerSelection + ". You Win!";
+                displayComputerWIns.textContent = ComputerWins;
+                displayPlayerWins.textContent = PlayerWins;
+                break
             }
+    }
+
+    if(ComputerWins == 5 || PlayerWins == 5) {
+        displayResult.textContent = "Game ended";
     }
 }
 
