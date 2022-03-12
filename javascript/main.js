@@ -1,5 +1,11 @@
 let ComputerWins = 0;
 let PlayerWins = 0;
+let playerSelection = "";
+
+// start the game with proper player value
+document.querySelectorAll(".start-the-game").forEach((element) => {
+    element.addEventListener("click", () => {PlayRound(element.value)});
+})
 
 // Get computer Selection 
 function computerPlay() {
@@ -31,9 +37,9 @@ function PlayGame() {
 
 
 // Compare value and choose winner
-function PlayRound() {
+function PlayRound(element) {
     const computerSelection = computerPlay();
-    const playerSelection = prompt("Coose Rock, Paper or Scissors!")
+    playerSelection = element;
 
     switch(playerSelection){
         case "Rock":
@@ -74,4 +80,3 @@ function PlayRound() {
 }
 
 
-PlayGame();
