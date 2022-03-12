@@ -91,8 +91,10 @@ function PlayRound(element) {
             }
     }
 
-    if(ComputerWins == 5 || PlayerWins == 5) {
-        displayResult.textContent = "Game ended";
+    if(ComputerWins === 5) {
+        displayResult.textContent = "The computer win the Game!";
+    }else if(PlayerWins === 5){
+        displayResult.textContent = "The Player win the Game!";
     }
 }
 
