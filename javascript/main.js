@@ -6,8 +6,11 @@ let displayPlayerWins = document.getElementById("player-win-counter");
 let displayComputerWIns = document.getElementById("computer-win-counter");
 let displayResult = document.getElementById("game-round-result");
 let displayRoundCount = document.getElementById("round-counter");
+
+displayResult.textContent = "Choose a card";
 displayComputerWIns.textContent = ComputerWins;
 displayPlayerWins.textContent = PlayerWins;
+displayRoundCount.textContent = "Round: " + RoundPlayed;
 
 // start the game with proper player value
 document.querySelectorAll(".start-the-game").forEach((element) => {
