@@ -12,6 +12,21 @@ displayComputerWIns.textContent = ComputerWins;
 displayPlayerWins.textContent = PlayerWins;
 displayRoundCount.textContent = "Round: " + RoundPlayed;
 
+
+// start a new game
+document.getElementById("start-again").addEventListener("click", () => {
+    ComputerWins = 0;
+    PlayerWins = 0;
+    RoundPlayed = 0;
+    playerSelection = "";
+
+    displayResult.textContent = "Choose a card";
+    displayComputerWIns.textContent = ComputerWins;
+    displayPlayerWins.textContent = PlayerWins;
+    displayRoundCount.textContent = "Round: " + RoundPlayed;
+})
+
+
 // start the game with proper player value
 document.querySelectorAll(".start-the-game").forEach((element) => {
     element.addEventListener("click", () => {
@@ -39,17 +54,17 @@ function PlayRound(element) {
     switch(playerSelection){
         case "Rock":
             if(computerSelection === "Rock"){
-                displayResult.textContent = "you choosed: " + playerSelection + ", the computer choosed: " + computerSelection + ". Nobody win";
+                displayResult.textContent = "You choosed: " + playerSelection + ", the computer choosed: " + computerSelection + ". Nobody win";
                 break
             }else if(computerSelection === "Paper"){
                 ComputerWins++;
-                displayResult.textContent = "you choosed: " + playerSelection + ", the computer choosed: " + computerSelection + ". The computer Win!";
+                displayResult.textContent = "You choosed: " + playerSelection + ", the computer choosed: " + computerSelection + ". The computer Win!";
                 displayComputerWIns.textContent = ComputerWins;
                 displayPlayerWins.textContent = PlayerWins;
                 break
             }else {
                 PlayerWins++;
-                displayResult.textContent = "you choosed: " + playerSelection + ", the computer choosed: " + computerSelection + ". You Win!";
+                displayResult.textContent = "You choosed: " + playerSelection + ", the computer choosed: " + computerSelection + ". You Win!";
                 displayComputerWIns.textContent = ComputerWins;
                 displayPlayerWins.textContent = PlayerWins;
                 break
@@ -58,17 +73,17 @@ function PlayRound(element) {
 
         case "Paper":
             if(computerSelection === "Paper"){
-                displayResult.textContent = "you choosed: " + playerSelection + ", the computer choosed: " + computerSelection + ". Nobody win";
+                displayResult.textContent = "You choosed: " + playerSelection + ", the computer choosed: " + computerSelection + ". Nobody win";
                 break
             }else if(computerSelection === "Scissors"){
                 ComputerWins++;
-                displayResult.textContent = "you choosed: " + playerSelection + ", the computer choosed: " + computerSelection + ". The computer Win!";
+                displayResult.textContent = "You choosed: " + playerSelection + ", the computer choosed: " + computerSelection + ". The computer Win!";
                 displayComputerWIns.textContent = ComputerWins;
                 displayPlayerWins.textContent = PlayerWins;
                 break
             }else {
                 PlayerWins++;
-                displayResult.textContent = "you choosed: " + playerSelection + ", the computer choosed: " + computerSelection + ". You Win!";
+                displayResult.textContent = "You choosed: " + playerSelection + ", the computer choosed: " + computerSelection + ". You Win!";
                 displayComputerWIns.textContent = ComputerWins;
                 displayPlayerWins.textContent = PlayerWins;
                 break
@@ -77,17 +92,17 @@ function PlayRound(element) {
 
         case "Scissors": 
             if(computerSelection === "Scissors"){
-                displayResult.textContent = "you choosed: " + playerSelection + ", the computer choosed: " + computerSelection + ". Nobody win";
+                displayResult.textContent = "You choosed: " + playerSelection + ", the computer choosed: " + computerSelection + ". Nobody win";
                 break
             }else if(computerSelection === "Rock"){
                 ComputerWins++;
-                displayResult.textContent = "you choosed: " + playerSelection + ", the computer choosed: " + computerSelection + ". The computer Win!";
+                displayResult.textContent = "You choosed: " + playerSelection + ", the computer choosed: " + computerSelection + ". The computer Win!";
                 displayComputerWIns.textContent = ComputerWins;
                 displayPlayerWins.textContent = PlayerWins;
                 break
             }else {
                 PlayerWins++;
-                displayResult.textContent = "you choosed: " + playerSelection + ", the computer choosed: " + computerSelection + ". You Win!";
+                displayResult.textContent = "You choosed: " + playerSelection + ", the computer choosed: " + computerSelection + ". You Win!";
                 displayComputerWIns.textContent = ComputerWins;
                 displayPlayerWins.textContent = PlayerWins;
                 break
